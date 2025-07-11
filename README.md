@@ -1,29 +1,104 @@
 
----
 
-## ⚙️ How to Run
-
-1. Clone/download the repository
-2. Use any **Freemarker-compatible static server** or inject the mock data manually.
-3. Open `views/index.ftl` with Freemarker engine enabled.
+## 📌 Project Objective
+The goal of this project was to build a complete **Employee Directory Web Application** using **HTML, CSS, JavaScript**, and **Freemarker templates** (EJS used in implementation). The challenge focused on modern UI/UX, responsive design, filtering, sorting, pagination, and form handling — all without any backend or database logic.
 
 ---
 
-## 💡 Reflection
+## ✨ Features Implemented
 
-### ✅ Challenges Faced:
-- Managing pagination + filtering on client-side only
-- Keeping UI responsive and mobile-friendly
-
-### 🔧 Improvements if given more time:
-- Use localStorage to persist employee edits/deletions
-- Modular JS with classes or modules
-- Add routing between form and dashboard
+- 🔍 **Search**: Search by employee name or email in real-time
+- 🔄 **Sorting**: Sort employees by first name or department
+- 📊 **Filtering**: Filter employees by department and role
+- ➕ **Add/Edit Form**: Form to add or update employee data with validation
+- ❌ **Delete Functionality**: Confirm before deleting an employee
+- 📄 **Freemarker Templates (EJS)**: Used to dynamically render views (`index`, `addEdit`)
+- 📱 **Responsive Design**: Fully works across desktop, tablet, and mobile
+- 📑 **Pagination**: Supports 10/25/50 items per page using JavaScript
 
 ---
 
-## 📫 Author
+## 📁 Project Structure
 
-**Gopi Krishna**  
-Frontend Developer – Assignment for Ajackus  
-[GitHub Profile](https://github.com/your-username)
+```
+
+frontend/
+├─ public/              # CSS styles
+├─ scripts/             # app.js, mockData.js
+├─ views/               # Freemarker/EJS templates
+├─ server.js            # Express server (static + routing)
+└─ README.md
+
+````
+
+---
+
+## 🚀 Setup Instructions
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/gopichand1939/Ajackus_Frontend.git
+   cd Ajackus_Frontend
+````
+
+2. Install dependencies (only Express needed):
+
+   ```bash
+   npm install express
+   ```
+
+3. Run the app:
+
+   ```bash
+   node server.js
+   ```
+
+4. Open in browser:
+
+   ```
+   http://localhost:3000/
+   ```
+
+---
+
+## 🧠 My Learning & Experience
+
+* I implemented **search, sort, filter, pagination, and form validation** completely in vanilla JS.
+* I learned how to properly **structure a frontend-only app using Express + Freemarker (EJS)**.
+* Responsive layout and modular JS helped keep things clean.
+* Implemented **DOM rendering and pagination logic manually** — no libraries used.
+* Made sure all actions (edit, delete) reflect immediately by updating local in-memory array.
+
+---
+
+## 🧩 Challenges Faced
+
+* ❗ Managing state between list and form (edit flow) was tricky with just local data.
+* ❌ Initially forgot to link edit buttons properly — fixed by syncing form with server-side render.
+* 🧪 Form validations had bugs for empty email/roles, fixed using cleaner JS logic.
+
+---
+
+## ✅ What Could Be Improved
+
+* Store data in localStorage or JSON file for persistence.
+* Add toasts/snackbar UI instead of alert boxes.
+* Improve styling with animations or transitions.
+* Separate JS logic into modules (using ES6 imports).
+
+---
+
+## ⏱ Timeline
+
+* Completed within **\~7 hours total** including design, logic, and testing.
+* Worked on it in short sessions and revised bugs before finalizing submission.
+
+---
+
+## 👨‍💻 Author
+
+**Gopi **
+Frontend Developer & Engineer
+[GitHub](https://github.com/gopichand1939)
+
+
