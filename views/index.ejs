@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="/public/styles.css" />
+  <script defer src="/scripts/app.js"></script>
+</head>
+<body>
+  <h1>Employee Directory</h1>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search by name or email" />
+    <select id="sortBy">
+      <option value="">Sort By</option>
+      <option value="firstName">First Name (A–Z)</option>
+      <option value="department">Department (A–Z)</option>
+    </select>
+    <select id="filterByDept">
+      <option value="">All Departments</option>
+      <option>HR</option>
+      <option>IT</option>
+      <option>Finance</option>
+      <option>Marketing</option>
+    </select>
+    <select id="filterByRole">
+      <option value="">All Roles</option>
+      <option>Manager</option>
+      <option>Developer</option>
+      <option>Analyst</option>
+      <option>Intern</option>
+    </select>
+    <button onclick="window.location.href='/edit'">Add Employee</button>
+  </div>
+
+  <!-- 🔄 Dynamic employee cards injected here by JS -->
+  <div id="employee-list"></div>
+
+  <div class="pagination-controls">
+    <label>Items per page:</label>
+    <select id="itemsPerPage">
+      <option>10</option>
+      <option>25</option>
+      <option>50</option>
+    </select>
+    <div id="pagination-buttons"></div>
+  </div>
+
+  <!-- 🧠 Pass employee list as JSON to frontend JS -->
+  <div id="employee-data" data-employees='<%- JSON.stringify(employees) %>'></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= employee ? "Edit" : "Add" %> Employee</title>
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2><%= employee ? "Edit" : "Add" %> Employee</h2>
+
+    <form id="employeeForm" method="POST" action="/edit">
+      <% if (employee) { %>
+        <input type="hidden" name="empId" value="<%= employee.id %>" />
+      <% } %>
+
+      <label>First Name</label>
+      <input type="text" name="firstName" value="<%= employee ? employee.firstName : '' %>" required />
+
+      <label>Last Name</label>
+      <input type="text" name="lastName" value="<%= employee ? employee.lastName : '' %>" required />
+
+      <label>Email</label>
+      <input type="email" name="email" value="<%= employee ? employee.email : '' %>" required />
+
+      <label>Department</label>
+      <select name="department" required>
+        <option value="">--Select--</option>
+        <option value="HR" <%= employee?.department === "HR" ? "selected" : "" %>>HR</option>
+        <option value="IT" <%= employee?.department === "IT" ? "selected" : "" %>>IT</option>
+        <option value="Finance" <%= employee?.department === "Finance" ? "selected" : "" %>>Finance</option>
+        <option value="Marketing" <%= employee?.department === "Marketing" ? "selected" : "" %>>Marketing</option>
+      </select>
+
+      <label>Role</label>
+      <select name="role" required>
+        <option value="">--Select--</option>
+        <option value="Manager" <%= employee?.role === "Manager" ? "selected" : "" %>>Manager</option>
+        <option value="Developer" <%= employee?.role === "Developer" ? "selected" : "" %>>Developer</option>
+        <option value="Analyst" <%= employee?.role === "Analyst" ? "selected" : "" %>>Analyst</option>
+        <option value="Intern" <%= employee?.role === "Intern" ? "selected" : "" %>>Intern</option>
+      </select>
+
+      <div class="form-buttons">
+        <button type="button" onclick="window.location.href='/'">Cancel</button>
+        <button type="submit"><%= employee ? "Update" : "Add" %></button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
